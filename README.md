@@ -80,6 +80,7 @@ docker exec -it mongodb mongosh -u root -p example --authenticationDatabase admi
 
 Verificar:
 ```js
+docker exec -it mongodb mongosh -u root -p example --authenticationDatabase admin
 use udav_bd2;
 db.pedidos.find({}, { _id:0, pedidoId:1, fecha:1, estado:1 }).sort({ fecha:-1 });
 db.pedidosUltimos30.find({}, { _id:0, pedidoId:1, fecha:1 }).sort({ fecha:-1 });
